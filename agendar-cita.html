@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Cita - Programa de Sueño - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenedor principal del formulario -->
+    <div class="min-h-screen flex items-center justify-center pt-24 pb-8 px-4">
+        <div class="w-full max-w-7xl rounded-3xl overflow-hidden">
+            <div class="grid md:grid-cols-2 min-h-[600px]">
+
+                <!-- Columna izquierda - Información -->
+                <div class="relative bg-cover bg-center p-8 md:p-12 flex flex-col justify-between"
+                    style="background-image: linear-gradient(#1E346A99, #1E346A99), url('assets/img/fondo_citas.png');">
+
+                    <!-- Botón Regresar -->
+                    <div>
+                        <a href="index.html"
+                            class="inline-flex items-center gap-2 text-white hover:text-gray-200 transition-colors text-lg">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none">
+                                </circle>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12H9m0 0l3 3m-3-3l3-3"></path>
+                            </svg>
+                            <span class="font-medium">Regresar</span>
+                        </a>
+                    </div>
+
+                    <!-- Texto principal -->
+                    <div class="text-white text-center my-8">
+                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                            Agenda<br>
+                            tu próxima cita<br>
+                            del Programa<br>
+                            de Sueño
+                        </h1>
+                        <p class="text-lg md:text-xl font-light max-w-md mx-auto">
+                            Si perteneces a este programa, aquí podrás agendar tu cita con tu tipo y número de
+                            documento.
+                        </p>
+                    </div>
+
+                    <!-- Espacio inferior -->
+                    <div></div>
+                </div>
+
+                <!-- Columna derecha - Formulario -->
+                <div class="bg-white flex flex-col justify-center rounded-3xl overflow-hidden form-column">
+
+                    <div class="px-8 md:px-12 py-8 md:py-12 rounded-t-3xl">
+                        <!-- Logo -->
+                        <div class="text-center">
+                            <img src="assets/img/logo/2ce674c2cf5f16cf041c8891ac7a2059c31cc429.png"
+                                alt="Messer - Gases for Life" class="h-16 md:h-20 mx-auto">
+                        </div>
+                    </div>
+
+                    <div class="px-8 md:px-12 py-8 md:py-12 bg-gray-100 rounded-b-3xl">
+                        <!-- Título del formulario -->
+                        <div class="text-center mb-8">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                                Ingrese su número de documento
+                            </h2>
+                            <p class="text-gray-600 text-base md:text-lg">
+                                Para poder agendar su cita debes ingresar el tipo y número de documento.
+                            </p>
+                        </div>
+
+                        <!-- Formulario -->
+                        <form id="formAgendarCita" class="space-y-6">
+
+                            <!-- Select de tipo de documento -->
+                            <div class="relative">
+                                <label for="tipoDocumento" class="sr-only">Tipo de documento</label>
+                                <div
+                                    class="flex items-center border-b-2 border-gray-300 focus-within:border-[#134395] transition-colors">
+                                    <div class="flex items-center justify-center w-10 h-10 text-gray-400">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <select id="tipoDocumento" name="tipoDocumento" required
+                                        class="flex-1 px-4 py-4 text-gray-700 bg-transparent focus:outline-none text-base appearance-none cursor-pointer">
+                                        <option value="" disabled selected>Selecciona un tipo de identificación</option>
+                                        <option value="CC">Cédula de Ciudadanía (CC)</option>
+                                        <option value="TI">Tarjeta de Identidad (TI)</option>
+                                        <option value="CE">Cédula de Extranjería (CE)</option>
+                                        <option value="PA">Pasaporte (PA)</option>
+                                        <option value="RC">Registro Civil (RC)</option>
+                                    </select>
+                                    <svg class="w-5 h-5 text-gray-400 mr-2 pointer-events-none" fill="none"
+                                        stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Input de número de documento -->
+                            <div class="relative">
+                                <label for="numeroDocumento" class="sr-only">Número de documento</label>
+                                <div
+                                    class="flex items-center border-b-2 border-gray-300 focus-within:border-[#134395] transition-colors">
+                                    <div class="flex items-center justify-center w-10 h-10 text-gray-400">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path>
+                                        </svg>
+                                    </div>
+                                    <input type="text" id="numeroDocumento" name="numeroDocumento"
+                                        placeholder="Ingrese su número de documento" required pattern="[0-9]+"
+                                        maxlength="15"
+                                        class="flex-1 px-4 py-4 text-gray-700 bg-transparent focus:outline-none text-base placeholder-gray-400">
+                                </div>
+                            </div>
+
+                            <!-- Botón Validar -->
+                            <div class="pt-4">
+                                <button type="submit"
+                                    class="w-full bg-[#134395] hover:bg-[#0f3275] text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-lg">
+                                    Validar
+                                </button>
+                            </div>
+
+                            <!-- Mensaje de ayuda -->
+                            <div class="text-center text-sm text-gray-500 pt-2">
+                                <p>¿Necesitas ayuda? <a href="#"
+                                        class="text-[#134395] hover:underline font-medium">Contáctanos</a></p>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+
+    <!-- Script para manejar el formulario -->
+    <script>
+        document.getElementById('formAgendarCita').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const tipoDocumento = document.getElementById('tipoDocumento').value;
+            const numeroDocumento = document.getElementById('numeroDocumento').value;
+
+            // Validación básica
+            if (!tipoDocumento || !numeroDocumento) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            // Aquí puedes agregar la lógica para enviar los datos al servidor
+            console.log('Tipo de documento:', tipoDocumento);
+            console.log('Número de documento:', numeroDocumento);
+
+            // Simulación de validación exitosa
+            alert(`Documento validado correctamente:\nTipo: ${tipoDocumento}\nNúmero: ${numeroDocumento}\n\nRedirigiendo a la selección de cita...`);
+
+            // Aquí redirigirías a la siguiente página del flujo
+            // window.location.href = 'seleccionar-fecha.html';
+        });
+
+        // Validación en tiempo real del número de documento (solo números)
+        document.getElementById('numeroDocumento').addEventListener('input', function (e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+</body>
+
+</html>

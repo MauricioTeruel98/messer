@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+/* Estilos personalizados para Messer */
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Source Sans 3", sans-serif;
+}
+
+/* Ajuste para header fijo */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos para navegación responsive */
+header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animación para el menú móvil */
+#mobileMenu {
+    animation: slideDown 0.3s ease-in-out;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el botón hamburguesa */
+#menuToggle {
+    z-index: 60;
+    padding: 0.5rem;
+}
+
+#menuToggle svg {
+    transition: all 0.3s ease-in-out;
+}
+
+#menuToggle:hover svg {
+    transform: scale(1.1);
+}
+
+/* Grid personalizado de servicios */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.5rem;
+}
+
+/* Primera fila: 3 items (ocupan 2 columnas cada uno) */
+.services-grid > div:nth-child(1),
+.services-grid > div:nth-child(2),
+.services-grid > div:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Segunda fila: 2 items (ocupan 3 columnas cada uno) */
+.services-grid > div:nth-child(4),
+.services-grid > div:nth-child(5) {
+    grid-column: span 3;
+}
+
+/* Tercera fila: 3 items (ocupan 2 columnas cada uno) */
+.services-grid > div:nth-child(6),
+.services-grid > div:nth-child(7),
+.services-grid > div:nth-child(8) {
+    grid-column: span 2;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+    border-radius: 0 0 26px 26px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #13439533 50%, #1E346A 100%);
+    z-index: 1;
+}
+
+/* Form Column */
+.form-column {
+    margin-left: -80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ------------------------ MEDIA QUERIES ORDENADOS ------------------------ */
+
+/* Responsive para tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    /* Menú móvil */
+    #mobileMenu {
+        max-height: calc(100vh - 80px);
+    }
+
+    /* Grid de servicios */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid > div {
+        grid-column: span 1 !important;
+    }
+
+    /* Hero section */
+    .hero-section {
+        height: 100vh;
+        min-height: 500px;
+    }
+
+    /* Form column */
+    .form-column {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .footer-links {
+        grid-column: 1 / 2;
+    }
+
+    .footer-contact {
+        grid-column: 2 / 3;
+    }
+
+    /* Hero: posible ajuste de margen superior */
+    /* .hero-section {} (vacío, reservado para ajustes futuros) */
+}
+
+
+/* Responsive para móviles (menor o igual a 768px) */
+@media (max-width: 768px) {
+    /* Form column */
+    .form-column {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .footer-brand {
+        text-align: center;
+        align-items: center;
+        grid-column: 1;
+    }
+
+    .footer-links {
+        grid-column: 1;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .footer-contact {
+        grid-column: 1;
+    }
+}
+
+
+/* Responsive para móviles (max-width: 640px) */
+@media (max-width: 640px) {
+    /* Form column */
+    .form-column {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    /* Menú móvil */
+    #mobileMenu {
+        max-height: calc(100vh - 70px);
+    }
+
+    /* Grid de servicios */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste del hero section para móvil */
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    /* Ajuste de padding en móvil */
+    main {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Ajuste de tarjetas en móvil */
+    .services-grid > div {
+        padding: 1.25rem !important;
+    }
+    .services-grid > div h3 {
+        font-size: 2rem !important;
+    }
+    .services-grid > div p {
+        font-size: 0.875rem !important;
+    }
+
+    /* Ajuste de títulos en móvil */
+    h1 {
+        font-size: 1.875rem !important; /* 30px */
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.5rem !important; /* 24px */
+    }
+
+    h3 {
+        font-size: 1.875rem !important; /* 30px */
+    }
+
+    /* Ajuste de padding en secciones */
+    section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Scrollbar personalizado para el menú móvil */
+    #mobileMenu::-webkit-scrollbar {
+        width: 4px;
+    }
+    #mobileMenu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    #mobileMenu::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 2px;
+    }
+    #mobileMenu::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    /* Hero: posible ajuste de margen superior en mobile */
+    /* .hero-section {} (vacío, reservado para ajustes futuros) */
+}
+
+/* Fin de media queries */
+
+/* ========================================
+   Estilos para formulario de pedidos de oxígeno
+   ======================================== */
+
+.selectable-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3.5px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+}
+
+.selectable-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.selectable-card.selected {
+    background-color: #FCFCFC;
+    border: 3.5px solid transparent;
+    background-image: linear-gradient(#FCFCFC, #FCFCFC), 
+                      linear-gradient(to right, #E32A21, #134395);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+}
+
+/* Estilos para el stepper */
+.step-line {
+    position: absolute;
+    top: 25px;
+    width: 90%;
+    left: 40px;
+    right: 0;
+    height: 2px;
+    background-color: #E5E7EB;
+    z-index: 0;
+}
+
+.step-item {
+    position: relative;
+    z-index: 1;
+}
+
+.step-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5E7EB;
+    color: #9CA3AF;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.step-circle.active {
+    background-color: #134395;
+    color: white;
+}
+
+.step-circle.completed {
+    background-color: #5EA436;
+    color: white;
+}
+
+/* Animaciones para el formulario */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Estilos para página de Datos del Paciente (Tabs)
+   ======================================== */
+
+/* Botones de tabs */
+.tab-button {
+    background-color: transparent;
+    color: #6B7280;
+    border: 3px solid transparent;
+    cursor: pointer;
+}
+
+.tab-button:hover {
+    background-color: #E5E7EB;
+}
+
+.tab-button.active {
+    background-color: #FCFCFC;
+    color: #134395;
+    font-weight: 600;
+    border: 3px solid transparent;
+    background-image: linear-gradient(#FCFCFC, #FCFCFC), 
+                      linear-gradient(to right, #E32A21, #134395);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+}
+
+.tab-button.active svg {
+    color: #134395;
+}
+
+/* Contenido de tabs */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Toggle de Derechos/Deberes */
+.derechos-deberes-toggle {
+    background-color: white;
+    color: #6B7280;
+    border: 2px solid #E5E7EB;
+    cursor: pointer;
+}
+
+.derechos-deberes-toggle:hover {
+    border-color: #134395;
+}
+
+.derechos-deberes-toggle.active {
+    background-color: #134395;
+    color: white;
+    border-color: #134395;
+}
+
+/* Responsive para tabs en móvil */
+@media (max-width: 768px) {
+    .tab-button {
+        font-size: 0.875rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .tab-button span {
+        font-size: 0.875rem;
+    }
+}

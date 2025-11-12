@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Pedido - Equipos y Servicios de Oxígeno - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section
+        class="hero-section relative h-[60vh] md:h-[100vh] flex items-center justify-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/oxigeno.png');"></div>
+
+        <div class="absolute top-0 left-0 w-64 h-64 border-4 border-white/20 rounded-br-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 border-4 border-white/20 rounded-tl-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+                Nuevo pedido para equipos y servicios de oxígeno
+            </h1>
+            <p class="text-lg md:text-xl font-light">
+                En esta sección podrás realizar una nueva solicitud de equipos, descartables y recolección.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10">
+
+        <!-- Contenedor del formulario -->
+        <div id="form-container" class="rounded-3xl p-8 md:p-12 bg-[#F3F7FF]">
+
+            <!-- Stepper de progreso -->
+            <div class="py-8 mb-8">
+                <div class="relative flex justify-between items-center max-w-3xl mx-auto">
+                    <div class="step-line"></div>
+
+                    <!-- Paso 1 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle active" id="step-1">1</div>
+                        <span class="text-sm font-semibold mt-2 text-[#134395]">Producto/servicio</span>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle" id="step-2">2</div>
+                        <span class="text-sm font-medium mt-2 text-gray-500">Dirección</span>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle" id="step-3">3</div>
+                        <span class="text-sm font-medium mt-2 text-gray-500">Fecha de entrega</span>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle" id="step-4">4</div>
+                        <span class="text-sm font-medium mt-2 text-gray-500">Resumen</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 1: Selección de categoría -->
+            <div id="step-1-content" class="step-content">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl text-[#134395] md:text-4xl font-bold mb-4">
+                        Selecciona la opción según tu necesidad
+                    </h2>
+                    <div class="bg-gray-100 rounded-full py-3 px-6 inline-flex items-center gap-3">
+                        <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122">
+                            </path>
+                        </svg>
+                        <span class="text-gray-700">Haz clic en la opción del equipo o servicio que deseas
+                            solicitar</span>
+                    </div>
+                </div>
+
+                <!-- Tarjetas de categorías principales -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <!-- Equipos de oxígeno -->
+                    <div class="selectable-card bg-white rounded-2xl p-6" data-category="equipos">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="assets/img/Equipos.png" alt="Equipos de oxígeno"
+                                class="w-24 h-24 mb-4 object-contain">
+                            <h3 class="text-xl font-bold text-[#134395]">Equipos de oxígeno</h3>
+                        </div>
+                    </div>
+
+                    <!-- Dispositivos descartables -->
+                    <div class="selectable-card bg-white rounded-2xl p-6" data-category="descartables">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="assets/img/Descartables.png" alt="Dispositivos descartables"
+                                class="w-24 h-24 mb-4 object-contain">
+                            <h3 class="text-xl font-bold text-[#134395]">Dispositivos descartables</h3>
+                        </div>
+                    </div>
+
+                    <!-- Recolección de equipos -->
+                    <div class="selectable-card bg-white rounded-2xl p-6" data-category="recoleccion">
+                        <div class="flex flex-col items-center text-center">
+                            <img src="assets/img/Recoleccion.png" alt="Recolección de equipos"
+                                class="w-24 h-24 mb-4 object-contain">
+                            <h3 class="text-xl font-bold text-[#134395]">Recolección de equipos</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenedor de subcategorías (se muestra dinámicamente) -->
+                <div id="subcategories-container" class="fade-in hidden">
+                    <!-- Equipos de oxígeno -->
+                    <div id="equipos-content" class="subcategory-content hidden">
+                        <div class="grid md:grid-cols-4 gap-6 bg-[#E1E8F5] rounded-2xl p-6">
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="cilindro">
+                                <img src="assets/img/icons/Vector (6).svg" alt="Cilindro"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Label text</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="soporte">
+                                <img src="assets/img/icons/Vector (7).svg" alt="Soporte" class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Label text</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="concentrador">
+                                <img src="assets/img/icons/Vector (8).svg" alt="Concentradores"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Concentradores de oxígeno</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="termo">
+                                <img src="assets/img/icons/Vector (9).svg" alt="Termo" class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Termo de oxígeno líquido</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dispositivos descartables -->
+                    <div id="descartables-content" class="subcategory-content hidden">
+                        <div class="grid md:grid-cols-3 gap-6 bg-[#E1E8F5] rounded-2xl p-6">
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="canula">
+                                <img src="assets/img/icons/Vector (10).svg" alt="Cánula" class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Cánula de oxígeno</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="extension">
+                                <img src="assets/img/icons/Vector (11).svg" alt="Extensión"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Extensión 7 metros cánula</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="humidificador">
+                                <img src="assets/img/icons/Vector (12).svg" alt="Humidificador"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Humidificador de oxígeno</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="kit-mascara">
+                                <img src="assets/img/icons/Vector (13).svg" alt="Kit máscara"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Kit de máscara ventury adulto
+                                    oxígeno</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm"
+                                data-product="mascara-traqueo">
+                                <img src="assets/img/icons/Vector (14).svg" alt="Máscara traqueostomía"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Máscara de traqueostomía
+                                    adulto</p>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-product="nipel">
+                                <img src="assets/img/icons/Group.svg" alt="Nipel conector"
+                                    class="w-16 h-16 mx-auto mb-3">
+                                <p class="text-center text-sm font-medium text-[#134395]">Nipel conector de oxígeno</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recolección de equipos -->
+                    <div id="recoleccion-content" class="subcategory-content hidden">
+                        <div class="grid md:grid-cols-2 gap-6 bg-[#E1E8F5] rounded-2xl p-6 mb-6">
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-recollection="parcial">
+                                <h3 class="text-center text-lg font-bold text-[#134395]">Recolección parcial</h3>
+                            </div>
+                            <div class="selectable-card bg-white rounded-xl p-6 shadow-sm" data-recollection="total">
+                                <h3 class="text-center text-lg font-bold text-[#134395]">Recolección total</h3>
+                            </div>
+                        </div>
+
+                        <!-- Motivo de recolección (se muestra al seleccionar tipo) -->
+                        <div id="motivo-recoleccion" class="hidden fade-in">
+                            <h3 class="text-center text-xl font-bold text-[#134395] mb-6">Motivo de la recolección</h3>
+                            <div class="grid md:grid-cols-4 gap-4 bg-[#E1E8F5] rounded-2xl p-6">
+                                <div class="selectable-card bg-white rounded-xl p-4 shadow-sm"
+                                    data-motivo="fallecimiento">
+                                    <p class="text-center text-sm font-medium text-[#134395]">Fallecimiento</p>
+                                </div>
+                                <div class="selectable-card bg-white rounded-xl p-4 shadow-sm" data-motivo="mejoria">
+                                    <p class="text-center text-sm font-medium text-[#134395]">Mejoría</p>
+                                </div>
+                                <div class="selectable-card bg-white rounded-xl p-4 shadow-sm"
+                                    data-motivo="orden-medica">
+                                    <p class="text-center text-sm font-medium text-[#134395]">Orden médica</p>
+                                </div>
+                                <div class="selectable-card bg-white rounded-xl p-4 shadow-sm"
+                                    data-motivo="cambio-proveedor">
+                                    <p class="text-center text-sm font-medium text-[#134395]">Cambio de proveedor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paso 2: Dirección (placeholder) -->
+            <div id="step-2-content" class="step-content hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#134395] mb-4">Dirección de entrega</h2>
+                    <p class="text-gray-600">Ingresa la dirección donde deseas recibir tu pedido</p>
+                </div>
+                <div class="max-w-2xl mx-auto space-y-4">
+                    <input type="text" placeholder="Dirección completa"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#134395] focus:outline-none">
+                    <input type="text" placeholder="Ciudad"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#134395] focus:outline-none">
+                    <input type="text" placeholder="Código postal"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#134395] focus:outline-none">
+                    <textarea placeholder="Referencias adicionales" rows="3"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#134395] focus:outline-none"></textarea>
+                </div>
+            </div>
+
+            <!-- Paso 3: Fecha (placeholder) -->
+            <div id="step-3-content" class="step-content hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#134395] mb-4">Fecha de entrega</h2>
+                    <p class="text-gray-600">Selecciona la fecha preferida para la entrega</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <input type="date"
+                        class="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[#134395] focus:outline-none text-lg">
+                </div>
+            </div>
+
+            <!-- Paso 4: Resumen (placeholder) -->
+            <div id="step-4-content" class="step-content hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#134395] mb-4">Resumen de tu pedido</h2>
+                    <p class="text-gray-600">Revisa los detalles antes de confirmar</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-[#E1E8F5] rounded-2xl p-6">
+                    <div id="order-summary" class="space-y-4">
+                        <!-- El resumen se generará dinámicamente -->
+                    </div>
+                    <button
+                        class="w-full mt-6 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 shadow-lg text-lg">
+                        Confirmar Pedido
+                    </button>
+                </div>
+            </div>
+
+            <!-- Botones de navegación -->
+            <div class="flex justify-center gap-5 items-center mt-8 pt-6 border-t">
+                <button id="btn-back"
+                    class="px-8 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-[#E1E8F5] transition-all duration-300">
+                    Regresar
+                </button>
+                <button id="btn-continue"
+                    class="px-8 py-3 bg-[#134395] hover:bg-[#0f3275] text-white font-semibold rounded-full transition-all duration-300 shadow-lg disabled:bg-gray-300 disabled:cursor-not-allowed"
+                    disabled>
+                    Continuar
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+
+    <!-- Script del formulario -->
+    <script src="assets/js/oxigeno-form.js"></script>
+</body>
+
+</html>

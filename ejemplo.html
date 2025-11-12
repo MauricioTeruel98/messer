@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Ejemplo - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-32">
+        <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <h1 class="text-4xl font-bold text-[#134395] mb-6">Página de Ejemplo</h1>
+            <p class="text-gray-700 text-lg mb-4">
+                Esta es una página de ejemplo que demuestra cómo usar los componentes reutilizables de navbar y footer.
+            </p>
+            <p class="text-gray-700 text-lg mb-4">
+                Como puedes ver, el navbar y el footer se cargan automáticamente sin necesidad de copiar y pegar todo el código HTML.
+            </p>
+            
+            <div class="bg-blue-50 rounded-xl p-6 mt-8">
+                <h2 class="text-2xl font-bold text-[#134395] mb-4">Ventajas de este sistema:</h2>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold">✓</span>
+                        <span>Solo necesitas incluir un div con id="navbar-container" y otro con id="footer-container"</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold">✓</span>
+                        <span>El JavaScript carga automáticamente los componentes</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold">✓</span>
+                        <span>La funcionalidad del menú móvil se inicializa automáticamente</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold">✓</span>
+                        <span>Si necesitas actualizar el navbar o footer, solo lo haces en un lugar</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="text-green-600 font-bold">✓</span>
+                        <span>Código más limpio y mantenible</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mt-8 bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                <h3 class="text-lg font-bold text-yellow-800 mb-2">💡 Nota para Desarrolladores</h3>
+                <p class="text-yellow-700">
+                    Para crear una nueva página, simplemente copia este archivo HTML y modifica solo la sección <code class="bg-yellow-100 px-2 py-1 rounded">&lt;main&gt;</code> con tu contenido. El navbar y footer se cargarán automáticamente.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>
+

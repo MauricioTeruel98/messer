@@ -145,6 +145,20 @@ header {
     flex-direction: column;
 }
 
+.bg-rectangle-shape {
+    background-image: url('../img/rectangle_1.png');
+    background-size: 200px;
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.bg-rectangle-two {
+    background-image: url('../img/rectangle_2.png');
+    background-size: 200px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
 /* ------------------------ MEDIA QUERIES ORDENADOS ------------------------ */
 
 /* Responsive para tablets (768px - 1024px) */
@@ -431,6 +445,32 @@ header {
 
 .tab-button.active svg {
     color: #134395;
+}
+
+/* Estilos personalizados para select */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("../img/icons/chev.svg");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem !important;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+}
+
+select:focus {
+    color: #374151;
+}
+
+select option {
+    color: #374151;
+}
+
+/* Cuando hay una opción seleccionada (no placeholder) */
+select:valid {
+    color: #374151;
 }
 
 /* Contenido de tabs */

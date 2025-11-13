@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de comprobantes - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#F6F8FF]">
+    <div id="navbar-container"></div>
+
+    <main class="max-w-6xl mx-auto px-4 lg:px-0 pt-28 pb-24">
+        <section class="relative overflow-hidden rounded-[42px] bg-gradient-to-br from-[#E9F1FF] via-white to-[#F6F8FF] px-8 sm:px-12 py-12 sm:py-16 shadow-[0px_24px_60px_-28px_rgba(19,67,149,0.45)]">
+            <div class="relative z-10 max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl font-bold text-[#134395] leading-tight">
+                    Historial de comprobantes gestionados
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-[#134395] max-w-2xl">
+                    Consulta el historial de cuotas moderadoras, copagos, renta de equipos y otros servicios que hayas gestionado.
+                </p>
+            </div>
+            <span class="absolute -right-16 -top-14 h-56 w-56 rounded-full bg-[#D6E6FF] blur-3xl opacity-70"></span>
+            <span class="absolute bottom-6 right-10 hidden h-24 w-24 rounded-full border-[18px] border-[#FFD6CC] opacity-70 sm:block"></span>
+        </section>
+
+        <a href="index.html" class="mt-10 inline-flex items-center gap-4 text-[#134395] font-semibold group">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#CFDAF4] bg-white transition-colors group-hover:bg-[#134395] group-hover:text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </span>
+            Regresar
+        </a>
+
+        <section class="mt-12 rounded-[34px] border border-[#D7E3FF] bg-white shadow-[0px_32px_80px_-40px_rgba(19,67,149,0.45)]">
+            <div class="px-8 py-8">
+                <div class="grid gap-10 lg:grid-cols-[3fr_2fr] lg:items-end">
+                    <div class="space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Selecciona el rango de fechas*</h2>
+                            <div class="grid gap-4 sm:grid-cols-2">
+                                <label class="space-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#5F77A2]">
+                                    <span>Desde</span>
+                                    <div class="relative">
+                                        <span class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[#8CA0C6]">
+                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </span>
+                                        <input type="text" placeholder="DD/MM/AAAA" class="w-full rounded-full border border-[#CFDAF4] bg-white px-12 py-3 text-base font-semibold text-[#134395] placeholder:text-[#8CA0C6] focus:border-[#134395] focus:outline-none focus:ring-2 focus:ring-[#134395]/20">
+                                    </div>
+                                </label>
+                                <label class="space-y-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#5F77A2]">
+                                    <span>Hasta</span>
+                                    <div class="relative">
+                                        <span class="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 text-[#8CA0C6]">
+                                            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </span>
+                                        <input type="text" placeholder="DD/MM/AAAA" class="w-full rounded-full border border-[#CFDAF4] bg-white px-12 py-3 text-base font-semibold text-[#134395] placeholder:text-[#8CA0C6] focus:border-[#134395] focus:outline-none focus:ring-2 focus:ring-[#134395]/20">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <h3 class="text-2xl font-semibold text-[#134395]">Elige el tipo de trámite*</h3>
+                            <div class="flex flex-wrap gap-3">
+                                <label class="inline-flex items-center gap-3 rounded-full border border-[#CFDAF4] bg-[#F8FAFF] px-5 py-2 text-sm font-semibold text-[#134395] shadow-sm">
+                                    <input type="checkbox" class="h-5 w-5 rounded border-[#C1D0EF] text-[#134395] focus:ring-[#134395]" checked>
+                                    Cuotas moderadoras
+                                </label>
+                                <label class="inline-flex items-center gap-3 rounded-full border border-[#CFDAF4] bg-[#F8FAFF] px-5 py-2 text-sm font-semibold text-[#134395] shadow-sm">
+                                    <input type="checkbox" class="h-5 w-5 rounded border-[#C1D0EF] text-[#134395] focus:ring-[#134395]" checked>
+                                    Copagos
+                                </label>
+                                <label class="inline-flex items-center gap-3 rounded-full border border-[#CFDAF4] bg-white px-5 py-2 text-sm font-semibold text-[#134395] shadow-sm">
+                                    <input type="checkbox" class="h-5 w-5 rounded border-[#C1D0EF] text-[#134395] focus:ring-[#134395]">
+                                    Otros servicios
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-start gap-4">
+                        <button class="w-full rounded-full bg-[#134395] px-10 py-3 text-base font-semibold text-white transition-colors hover:bg-[#0F2E70] lg:w-auto">
+                            Buscar comprobantes
+                        </button>
+                        <span class="text-xs font-medium uppercase tracking-[0.2em] text-[#8CA0C6]">*Campos obligatorios</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-10 rounded-[34px] border border-[#D7E3FF] bg-white shadow-[0px_32px_80px_-40px_rgba(19,67,149,0.45)] overflow-hidden">
+            <div class="px-8 pt-8 pb-6 border-b border-[#E1E9FF]">
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-[#134395]">Resultados de tu búsqueda</h2>
+                        <span class="mt-3 block h-1 w-20 rounded-full bg-[#134395]"></span>
+                    </div>
+                    <p class="text-sm text-[#5F77A2]">Estos son los comprobantes que coinciden con los filtros seleccionados.</p>
+                </div>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="min-w-[960px] w-full text-left">
+                    <thead class="bg-[#F2F6FF] text-[#415B87] text-xs font-semibold uppercase tracking-[0.12em]">
+                        <tr>
+                            <th class="px-8 py-4">Número de comprobante</th>
+                            <th class="px-8 py-4">Tipo de trámite</th>
+                            <th class="px-8 py-4">Servicio</th>
+                            <th class="px-8 py-4">Estado</th>
+                            <th class="px-8 py-4">Fecha de gestión</th>
+                            <th class="px-8 py-4">Usuario</th>
+                            <th class="px-8 py-4"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#E5ECFF] text-[#1B2F5E]">
+                        <tr class="transition-colors hover:bg-[#F8FBFF]">
+                            <td class="px-8 py-5 font-semibold">CMP-10234</td>
+                            <td class="px-8 py-5">Cuota moderadora</td>
+                            <td class="px-8 py-5">Consulta neumología</td>
+                            <td class="px-8 py-5">
+                                <span class="inline-flex items-center gap-2 rounded-full bg-[#E6F4EA] px-3 py-1 text-xs font-semibold text-[#1D8348]">
+                                    <span class="h-2 w-2 rounded-full bg-[#1D8348]"></span>
+                                    Gestionado
+                                </span>
+                            </td>
+                            <td class="px-8 py-5">18/10/2024</td>
+                            <td class="px-8 py-5">Ortiz, Ana Blasina</td>
+                            <td class="px-8 py-5 text-right">
+                                <button class="inline-flex items-center gap-2 text-sm font-semibold text-[#134395] transition-colors hover:text-[#0F2E70]">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5" />
+                                    </svg>
+                                    Descargar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="transition-colors hover:bg-[#F8FBFF]">
+                            <td class="px-8 py-5 font-semibold">CMP-10212</td>
+                            <td class="px-8 py-5">Copago</td>
+                            <td class="px-8 py-5">Oxigenoterapia domiciliaria</td>
+                            <td class="px-8 py-5">
+                                <span class="inline-flex items-center gap-2 rounded-full bg-[#FFEAD9] px-3 py-1 text-xs font-semibold text-[#FF6B00]">
+                                    <span class="h-2 w-2 rounded-full bg-[#FF6B00]"></span>
+                                    Pago aplicado
+                                </span>
+                            </td>
+                            <td class="px-8 py-5">03/10/2024</td>
+                            <td class="px-8 py-5">Ortiz, Ana Blasina</td>
+                            <td class="px-8 py-5 text-right">
+                                <button class="inline-flex items-center gap-2 text-sm font-semibold text-[#134395] transition-colors hover:text-[#0F2E70]">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5" />
+                                    </svg>
+                                    Descargar
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="transition-colors hover:bg-[#F8FBFF]">
+                            <td class="px-8 py-5 font-semibold">CMP-10197</td>
+                            <td class="px-8 py-5">Renta de equipos</td>
+                            <td class="px-8 py-5">CPAP - Equipo portátil</td>
+                            <td class="px-8 py-5">
+                                <span class="inline-flex items-center gap-2 rounded-full bg-[#E1ECFE] px-3 py-1 text-xs font-semibold text-[#134395]">
+                                    <span class="h-2 w-2 rounded-full bg-[#134395]"></span>
+                                    En revisión
+                                </span>
+                            </td>
+                            <td class="px-8 py-5">25/09/2024</td>
+                            <td class="px-8 py-5">Ortiz, Ana Blasina</td>
+                            <td class="px-8 py-5 text-right">
+                                <button class="inline-flex items-center gap-2 text-sm font-semibold text-[#134395] transition-colors hover:text-[#0F2E70]">
+                                    <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v14m7-7H5" />
+                                    </svg>
+                                    Descargar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="flex flex-col gap-4 border-t border-[#E1E9FF] bg-[#F6F9FF] px-8 py-6 text-sm text-[#1B2F5E] md:flex-row md:items-center md:justify-between">
+                <p>Mostrando <strong>1 - 3</strong> de <strong>3</strong> comprobantes gestionados</p>
+                <div class="flex items-center gap-3 text-sm font-semibold text-[#134395]">
+                    <button class="rounded-full border border-[#CFDAF4] px-4 py-2 text-sm font-semibold text-[#8CA0C6]" disabled>
+                        Anterior
+                    </button>
+                    <span>Página 1 de 1</span>
+                    <button class="rounded-full border border-[#CFDAF4] px-4 py-2 text-sm font-semibold text-[#8CA0C6]" disabled>
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin servicios pendientes - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#F6F8FF]">
+    <div id="navbar-container"></div>
+
+    <main class="max-w-6xl mx-auto px-4 lg:px-0 pt-28 pb-24">
+        <section class="relative overflow-hidden rounded-[42px] bg-gradient-to-br from-[#E7F1FF] via-white to-[#F6F8FF] px-8 sm:px-12 py-12 sm:py-16 shadow-[0px_24px_60px_-28px_rgba(19,67,149,0.45)]">
+            <div class="relative z-10 max-w-3xl">
+                <h1 class="text-4xl sm:text-5xl font-bold text-[#134395] leading-tight">
+                    Firma y realiza tus pagos pendientes
+                </h1>
+                <p class="mt-4 text-lg sm:text-xl text-[#134395] max-w-2xl">
+                    Aquí puedes firmar digitalmente tus comprobantes y completar los copagos o cuotas moderadoras de tus servicios.
+                </p>
+            </div>
+            <span class="absolute -right-10 -top-10 h-52 w-52 rounded-full bg-[#FFDED9] blur-3xl opacity-70"></span>
+            <span class="absolute bottom-6 right-10 hidden h-24 w-24 rounded-full border-[18px] border-[#C1D9FF] opacity-70 sm:block"></span>
+        </section>
+
+        <a href="index.html" class="mt-10 inline-flex items-center gap-4 text-[#134395] font-semibold group">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#CFDAF4] bg-white transition-colors group-hover:bg-[#134395] group-hover:text-white">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </span>
+            Regresar
+        </a>
+
+        <section class="mt-12 rounded-[34px] border border-[#D7E3FF] bg-white shadow-[0px_32px_80px_-40px_rgba(19,67,149,0.45)] overflow-hidden">
+            <div class="px-8 pt-8 pb-6 border-b border-[#E1E9FF]">
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-[#134395]">Servicios pendientes de pago</h2>
+                        <span class="mt-3 block h-1 w-20 rounded-full bg-[#E32A21]"></span>
+                    </div>
+                    <p class="text-sm text-[#5F77A2]">Selecciona los comprobantes que deseas pagar y continúa con el proceso de pago en línea.</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-6 bg-[#FFF7F7] px-8 py-14 text-center">
+                <span class="flex h-20 w-20 items-center justify-center rounded-full bg-[#FFE3E0] text-[#E32A21]">
+                    <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+                <div class="space-y-3 max-w-2xl">
+                    <h3 class="text-2xl font-semibold text-[#E32A21]">No tienes servicios o comprobantes por pagar.</h3>
+                    <p class="text-base text-[#5F77A2]">Cuando se genere un nuevo comprobante por pagar, recibirás una notificación para completarlo desde esta sección.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-10 rounded-[34px] border border-[#D7E3FF] bg-white shadow-[0px_32px_80px_-40px_rgba(19,67,149,0.45)] overflow-hidden">
+            <div class="px-8 pt-8 pb-6 border-b border-[#E1E9FF]">
+                <div class="flex flex-col gap-3">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-[#134395]">Servicios pendientes de firma</h2>
+                        <span class="mt-3 block h-1 w-20 rounded-full bg-[#134395]"></span>
+                    </div>
+                    <p class="text-sm text-[#5F77A2]">Revisa los comprobantes generados y firma digitalmente para completar el proceso.</p>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-6 bg-[#F8FAFF] px-8 py-14 text-center">
+                <span class="flex h-20 w-20 items-center justify-center rounded-full bg-[#E4EDFF] text-[#134395]">
+                    <svg class="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </span>
+                <div class="space-y-3 max-w-2xl">
+                    <h3 class="text-2xl font-semibold text-[#134395]">No tienes servicios o comprobantes por firmar.</h3>
+                    <p class="text-base text-[#5F77A2]">Cuando haya un comprobante que requiera tu firma, lo verás listado aquí para que completes el proceso.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

@@ -95,6 +95,36 @@ const COMPONENTS = {
                     </div>
                 </button>
             </li>
+            <li class="relative dropdown-container">
+                <button class="dropdown-toggle flex items-center gap-2 text-gray-700 hover:text-blue-900 transition-colors group">
+                    <span class="font-medium">Demo</span>
+                    <div
+                        class="w-4 h-4 rounded-full flex items-center justify-center group-hover:border-blue-900 transition-colors">
+                        <img src="assets/img/icons/menu-item.svg" alt="Messer - Gases for Life" class="h-12">
+                    </div>
+                </button>
+                <div class="dropdown-menu hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-2 min-w-[280px] z-50">
+                    <a href="historial-comprobantes.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Historial comprobantes (datos)
+                    </a>
+                    <a href="historial-comprobantes-sin-resultados.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Historial comprobantes (sin resultados)
+                    </a>
+                    <div class="border-t border-gray-100 my-1"></div>
+                    <a href="firma-pagos.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Firma y pagos (ambos pendientes)
+                    </a>
+                    <a href="firma-pagos-sin-servicios-por-pagar.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Firma y pagos (sin pagos pendientes)
+                    </a>
+                    <a href="firma-pagos-solo-firma-pendiente.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Firma y pagos (sin firmas pendientes)
+                    </a>
+                    <a href="firma-pagos-sin-servicios.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        Firma y pagos (sin pendientes)
+                    </a>
+                </div>
+            </li>
         </ul>
     </nav>
 
@@ -146,6 +176,34 @@ const COMPONENTS = {
                     <span class="font-medium">Tutoriales</span>
                     <img src="assets/img/icons/menu-item.svg" alt="Messer - Gases for Life" class="h-6">
                 </button>
+            </li>
+            <li class="mobile-dropdown-container">
+                <button class="mobile-dropdown-toggle w-full flex items-center justify-between gap-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors p-3 rounded-lg group">
+                    <span class="font-medium">Demo</span>
+                    <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-6 mt-2 space-y-2">
+                    <a href="historial-comprobantes.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Historial comprobantes (datos)
+                    </a>
+                    <a href="historial-comprobantes-sin-resultados.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Historial comprobantes (sin resultados)
+                    </a>
+                    <a href="firma-pagos.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Firma y pagos (ambos pendientes)
+                    </a>
+                    <a href="firma-pagos-sin-servicios-por-pagar.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Firma y pagos (sin pagos pendientes)
+                    </a>
+                    <a href="firma-pagos-solo-firma-pendiente.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Firma y pagos (sin firmas pendientes)
+                    </a>
+                    <a href="firma-pagos-sin-servicios.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        Firma y pagos (sin pendientes)
+                    </a>
+                </div>
             </li>
         </ul>
     </nav>
@@ -230,6 +288,12 @@ const COMPONENTS = {
             <a href="pedidos.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Pedidos</a>
             <a href="pedido-detalle.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Detalle Pedido</a>
             <a href="historial-pedidos.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Historial Pedidos</a>
+            <a href="historial-comprobantes.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Historial comprobantes (datos)</a>
+            <a href="historial-comprobantes-sin-resultados.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Historial comprobantes (sin resultados)</a>
+            <a href="firma-pagos.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Firma y pagos (ambos pendientes)</a>
+            <a href="firma-pagos-sin-servicios-por-pagar.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Firma y pagos (sin pagos pendientes)</a>
+            <a href="firma-pagos-solo-firma-pendiente.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Firma y pagos (sin firmas pendientes)</a>
+            <a href="firma-pagos-sin-servicios.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Firma y pagos (sin pendientes)</a>
         </nav>
     </div>
 </div>`

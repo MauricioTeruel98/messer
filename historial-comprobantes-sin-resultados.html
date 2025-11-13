@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de comprobantes - Sin resultados</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <div id="navbar-container"></div>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-20">
+        <section class="bg-[#E1ECFE] mt-10 p-8 md:p-12 rounded-3xl bg-rectangle-shape">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#134395] leading-tight mb-4">
+                    Historial de comprobantes gestionados
+                </h1>
+                <p class="text-lg md:text-xl text-[#134395]">
+                    Consulta el historial de cuotas moderadoras, copagos, renta de equipos y otros servicios que hayas gestionado.
+                </p>
+            </div>
+        </section>
+
+        <div class="mt-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors text-base font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m0 0l3 3m-3-3l3-3"></path>
+                </svg>
+                <span>Regresar</span>
+            </a>
+        </div>
+
+        <section class="bg-white rounded-3xl p-6 md:p-8 shadow-sm mt-8">
+            <div class="grid gap-6 md:grid-cols-[2fr_1fr] md:items-end">
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-[#134395] mb-2">Selecciona el rango de fechas*</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label class="flex flex-col text-sm text-[#134395] font-medium">
+                                Desde
+                                <input type="text" placeholder="DD/MM/AAAA" class="mt-2 rounded-full border border-[#C7D6F5] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]/40">
+                            </label>
+                            <label class="flex flex-col text-sm text-[#134395] font-medium">
+                                Hasta
+                                <input type="text" placeholder="DD/MM/AAAA" class="mt-2 rounded-full border border-[#C7D6F5] px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]/40">
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-[#134395] mb-3">Elige el tipo de trámite*</h3>
+                        <div class="flex flex-wrap gap-4">
+                            <label class="flex items-center gap-2 text-[#134395] text-base">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]" checked>
+                                Cuotas moderadoras
+                            </label>
+                            <label class="flex items-center gap-2 text-[#134395] text-base">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]" checked>
+                                Copagos
+                            </label>
+                            <label class="flex items-center gap-2 text-[#134395] text-base">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]">
+                                Otros servicios
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:justify-end">
+                    <button class="w-full md:w-auto bg-[#134395] hover:bg-[#0f3275] text-white font-semibold px-8 py-3 rounded-full transition-colors">
+                        Buscar comprobantes
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-sm mt-8 p-8 flex flex-col items-center text-center gap-6">
+            <div class="w-20 h-20 bg-[#E1ECFE] rounded-full flex items-center justify-center">
+                <svg class="w-10 h-10 text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m9 4V7a2 2 0 00-1-1.732l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 7v13a2 2 0 002 2h14a2 2 0 002-2z" />
+                </svg>
+            </div>
+            <div class="space-y-2 max-w-2xl">
+                <h2 class="text-2xl font-semibold text-[#134395]">Aún no has gestionado comprobantes en este periodo</h2>
+                <p class="text-[#8097BF] text-lg">Ajusta el rango de fechas o selecciona otros tipos de trámite para consultar comprobantes anteriores.</p>
+            </div>
+            <button class="inline-flex items-center gap-2 px-6 py-3 bg-[#134395] text-white rounded-full font-semibold hover:bg-[#0f3275] transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h4l3 10 4-18 3 8h4" />
+                </svg>
+                Consultar todos los comprobantes
+            </button>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

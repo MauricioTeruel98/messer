@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios sin firma pendiente - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <div id="navbar-container"></div>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-20">
+        <section class="bg-[#E1ECFE] mt-10 p-8 md:p-12 rounded-3xl bg-rectangle-two">
+            <div class="max-w-4xl">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#134395] leading-tight mb-4">
+                    Firma y realiza tus pagos pendientes
+                </h1>
+                <p class="text-lg md:text-xl text-[#134395]">
+                    Aquí puedes firmar digitalmente tus comprobantes y completar los copagos o cuotas moderadoras de tus servicios.
+                </p>
+            </div>
+        </section>
+
+        <div class="mt-8">
+            <a href="index.html" class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors text-base font-medium">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12H9m0 0l3 3m-3-3l3-3"></path>
+                </svg>
+                <span>Regresar</span>
+            </a>
+        </div>
+
+        <section class="bg-white rounded-3xl shadow-sm mt-8 overflow-hidden">
+            <div class="px-6 pt-6 pb-4 border-b border-[#E4ECFF]">
+                <h2 class="text-2xl font-semibold text-[#134395] mb-2">Servicios pendientes de pago</h2>
+                <p class="text-[#8097BF]">Selecciona los comprobantes que deseas pagar y continúa con el proceso de pago en línea.</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="w-full">
+                    <thead class="bg-[#F3F7FF] text-left">
+                        <tr>
+                            <th class="px-6 py-4">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]">
+                            </th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Servicio</th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Número de comprobante</th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Usuario</th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Valor a pagar</th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Fecha de generación</th>
+                            <th class="px-6 py-4 text-[#134395] font-semibold text-sm uppercase tracking-wide">Estado</th>
+                            <th class="px-6 py-4"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-[#E4ECFF]">
+                        <tr class="hover:bg-[#F9FBFF] transition-colors">
+                            <td class="px-6 py-5">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]" checked>
+                            </td>
+                            <td class="px-6 py-5 text-[#134395] font-semibold">Oxigenoterapia domiciliaria</td>
+                            <td class="px-6 py-5 text-[#134395]">CPG-000945</td>
+                            <td class="px-6 py-5 text-[#134395]">Ortiz, Ana Blasina</td>
+                            <td class="px-6 py-5 text-[#134395] font-semibold">$ 85.000</td>
+                            <td class="px-6 py-5 text-[#134395]">17/10/2024</td>
+                            <td class="px-6 py-5">
+                                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#E32A21] bg-[#FFE5E5] px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-[#E32A21] rounded-full"></span>
+                                    Pendiente de pago
+                                </span>
+                            </td>
+                            <td class="px-6 py-5 text-right">
+                                <button class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors font-semibold">
+                                    Ver comprobante
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-[#F9FBFF] transition-colors">
+                            <td class="px-6 py-5">
+                                <input type="checkbox" class="w-5 h-5 rounded border-[#C7D6F5] text-[#134395] focus:ring-[#134395]">
+                            </td>
+                            <td class="px-6 py-5 text-[#134395] font-semibold">Cuota moderadora consulta neumología</td>
+                            <td class="px-6 py-5 text-[#134395]">CMO-004533</td>
+                            <td class="px-6 py-5 text-[#134395]">Ortiz, Ana Blasina</td>
+                            <td class="px-6 py-5 text-[#134395] font-semibold">$ 42.500</td>
+                            <td class="px-6 py-5 text-[#134395]">15/10/2024</td>
+                            <td class="px-6 py-5">
+                                <span class="inline-flex items-center gap-2 text-sm font-semibold text-[#FF6B00] bg-[#FFE9D6] px-3 py-1 rounded-full">
+                                    <span class="w-2 h-2 bg-[#FF6B00] rounded-full"></span>
+                                    Pendiente de pago
+                                </span>
+                            </td>
+                            <td class="px-6 py-5 text-right">
+                                <button class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors font-semibold">
+                                    Ver comprobante
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 bg-[#F9FBFF] border-t border-[#E4ECFF] flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <p class="text-[#134395] text-sm">Mostrando <strong>1 - 2</strong> de <strong>2</strong> servicios por pagar</p>
+                <div class="flex flex-col md:flex-row md:items-center gap-3">
+                    <div class="text-[#134395] font-semibold text-lg">Total seleccionado: <span class="text-[#E32A21]">$ 127.500</span></div>
+                    <button class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#E32A21] text-white rounded-full font-semibold hover:bg-[#c41f17] transition-colors">
+                        Continuar con el pago
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-3xl shadow-sm mt-8 overflow-hidden">
+            <div class="px-6 pt-6 pb-4 border-b border-[#E4ECFF]">
+                <h2 class="text-2xl font-semibold text-[#134395] mb-2">Servicios pendientes de firma</h2>
+                <p class="text-[#8097BF]">Revisa los comprobantes generados y firma digitalmente para completar el proceso.</p>
+            </div>
+            <div class="px-6 py-12 flex flex-col items-center text-center gap-4">
+                <div class="w-20 h-20 bg-[#FFE5E5] rounded-full flex items-center justify-center">
+                    <svg class="w-10 h-10 text-[#E32A21]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                </div>
+                <div class="space-y-2 max-w-2xl">
+                    <h3 class="text-2xl font-semibold text-[#134395]">No tienes servicios o comprobantes por firmar.</h3>
+                    <p class="text-[#8097BF] text-lg">Cuando haya un comprobante que requiera tu firma, lo verás listado aquí para que completes el proceso.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

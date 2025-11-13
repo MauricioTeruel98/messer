@@ -207,7 +207,32 @@ const COMPONENTS = {
             </div>
         </div>
     </div>
-</footer>`
+</footer>`,
+    
+    // Navegación temporal - SOLO PARA DEMO (quitar antes de producción)
+    tempNav: `<div id="temp-nav" class="fixed right-0 top-1/2 -translate-y-1/2 z-[9999] transition-all duration-300">
+    <button id="temp-nav-toggle" class="bg-[#134395] text-white px-4 py-3 rounded-l-lg shadow-lg hover:bg-[#0f3275] transition-colors flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <span class="hidden sm:inline">Navegación</span>
+    </button>
+    <div id="temp-nav-panel" class="hidden bg-white shadow-2xl rounded-l-lg border border-gray-200 p-4 min-w-[220px] max-h-[80vh] overflow-y-auto">
+        <div class="mb-3 pb-3 border-b border-gray-200">
+            <h3 class="font-bold text-[#134395] text-sm">NAVEGACIÓN TEMPORAL</h3>
+            <p class="text-xs text-gray-500 mt-1">Para demo</p>
+        </div>
+        <nav class="space-y-1">
+            <a href="index.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Inicio</a>
+            <a href="datos-paciente.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Datos del Paciente</a>
+            <a href="agendar-cita.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Agendar Cita</a>
+            <a href="oxigeno.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Oxígeno</a>
+            <a href="pedidos.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Pedidos</a>
+            <a href="pedido-detalle.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Detalle Pedido</a>
+            <a href="historial-pedidos.html" class="block px-3 py-2 text-sm text-gray-700 hover:bg-[#E9F1FF] hover:text-[#134395] rounded transition-colors">Historial Pedidos</a>
+        </nav>
+    </div>
+</div>`
 };
 
 // Función para cargar componente desde templates embebidos
@@ -339,13 +364,50 @@ function initMobileDropdowns() {
     });
 }
 
+// Función para cargar navegación temporal directamente en el body
+function loadTempNav() {
+    try {
+        const tempNavHTML = COMPONENTS.tempNav;
+        if (!tempNavHTML) {
+            console.warn('Navegación temporal no encontrada');
+            return false;
+        }
+        
+        // Verificar si ya existe
+        if (document.getElementById('temp-nav')) {
+            return true;
+        }
+        
+        // Insertar HTML directamente en el body
+        document.body.insertAdjacentHTML('beforeend', tempNavHTML);
+        
+        // Inicializar toggle de navegación temporal después de insertar
+        setTimeout(() => {
+            const toggle = document.getElementById('temp-nav-toggle');
+            const panel = document.getElementById('temp-nav-panel');
+            
+            if (toggle && panel) {
+                toggle.addEventListener('click', () => {
+                    panel.classList.toggle('hidden');
+                });
+            }
+        }, 0);
+        
+        return true;
+    } catch (error) {
+        console.error('Error al cargar navegación temporal:', error);
+        return false;
+    }
+}
+
 // Función principal que carga todos los componentes
 async function loadAllComponents() {
     try {
-        // Cargar navbar y footer en paralelo
-        const [navbarLoaded, footerLoaded] = await Promise.all([
+        // Cargar navbar, footer y navegación temporal en paralelo
+        const [navbarLoaded, footerLoaded, tempNavLoaded] = await Promise.all([
             loadComponent('navbar', 'navbar-container'),
-            loadComponent('footer', 'footer-container')
+            loadComponent('footer', 'footer-container'),
+            Promise.resolve(loadTempNav())
         ]);
         
         // Inicializar funcionalidad del menú móvil después de cargar el navbar

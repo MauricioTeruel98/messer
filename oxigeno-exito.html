@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Registrada con Éxito - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Hero Section -->
+    <section
+        class="hero-section relative h-[60vh] md:h-[100vh] flex items-center justify-center text-white overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('assets/img/oxigeno.png');"></div>
+
+        <div class="absolute top-0 left-0 w-64 h-64 border-4 border-white/20 rounded-br-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-96 h-96 border-4 border-white/20 rounded-tl-[150px] pointer-events-none">
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                Solicitud registrada con éxito
+            </h1>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10">
+        <div class="max-w-4xl mx-auto">
+            <!-- Stepper de progreso -->
+            <div class="py-8 mb-8">
+                <div class="relative flex justify-between items-center max-w-3xl mx-auto">
+                    <div class="step-line"></div>
+
+                    <!-- Paso 1 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle completed">1</div>
+                        <span class="text-sm font-medium mt-2 text-[#5EA436]">Producto/servicio</span>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle completed">2</div>
+                        <span class="text-sm font-medium mt-2 text-[#5EA436]">Dirección</span>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle completed">3</div>
+                        <span class="text-sm font-medium mt-2 text-[#5EA436]">Fecha de entrega</span>
+                    </div>
+
+                    <!-- Paso 4 -->
+                    <div class="step-item flex flex-col items-center">
+                        <div class="step-circle completed">4</div>
+                        <span class="text-sm font-medium mt-2 text-[#5EA436]">Resumen</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contenido de confirmación -->
+            <div class="bg-[#F3F7FF] rounded-3xl p-8 md:p-12">
+                <div class="text-center mb-8">
+                    <!-- Ícono de éxito -->
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-green-100 rounded-full mb-6">
+                        <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#134395] mb-4">
+                        Recibimos tu solicitud de pedido con el código <span class="text-red-600"
+                            id="codigo-pedido">SPW-93293</span>.
+                    </h2>
+                </div>
+
+                <!-- Mensaje informativo -->
+                <div class="bg-white rounded-2xl p-6 mb-6 shadow-sm">
+                    <p class="text-center text-gray-700 text-lg mb-4">
+                        En los próximos minutos <span class="font-bold text-[#134395]">recibirás un correo
+                            electrónico con todos los detalles</span> de tu pedido.
+                    </p>
+                </div>
+
+                <!-- Información sobre seguimiento -->
+                <div class="bg-white rounded-2xl p-6 mb-8 shadow-sm">
+                    <p class="text-center text-gray-700 text-lg">
+                        En la sección <a href="pedidos.html" class="font-bold text-[#134395] hover:underline">Estado
+                            de pedidos</a> podrás rastrear tu pedido cuando esté en camino a tu domicilio.
+                    </p>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="index.html"
+                        class="px-8 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:bg-gray-50 transition-all duration-300 text-center">
+                        Regresar
+                    </a>
+                    <a href="oxigeno.html"
+                        class="px-8 py-3 bg-[#134395] hover:bg-[#0f3275] text-white font-semibold rounded-full transition-all duration-300 shadow-lg text-center">
+                        Crear nueva solicitud
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+
+    <!-- Script para obtener el código del pedido desde URL -->
+    <script>
+        // Obtener el código del pedido desde los parámetros de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const codigoPedido = urlParams.get('codigo');
+
+        if (codigoPedido) {
+            document.getElementById('codigo-pedido').textContent = codigoPedido;
+        }
+    </script>
+</body>
+
+</html>

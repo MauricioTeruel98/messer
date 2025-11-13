@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de pedidos - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-20">
+
+        <div class="bg-[#E1ECFE] mt-10 p-8 md:p-12 rounded-3xl bg-rectangle-shape">
+            
+            <!-- Header con botón regresar -->
+            <div class="mb-6">
+                <a href="index.html"
+                    class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors text-base font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12H9m0 0l3 3m-3-3l3-3"></path>
+                    </svg>
+                    <span>Regresar</span>
+                </a>
+            </div>
+
+            <!-- Título y descripción -->
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#134395] mb-4">Historial de pedidos</h1>
+                <p class="text-lg text-[#134395]">Consulta los pedidos que has realizado, revisa su estado y accede a los detalles de gestiones anteriores.</p>
+            </div>
+
+            <!-- Mensaje de sin pedidos -->
+            <div class="bg-[#FFE5E5] border-2 border-[#FF0000] rounded-2xl p-6 mb-8">
+                <p class="text-[#E32A21] text-center font-semibold text-lg">No se encontraron pedidos registrados en tu historial.</p>
+            </div>
+
+            <!-- Tabla de pedidos -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-[#F3F7FF]">
+                            <tr>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Cod
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Tipo
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Estado
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        ¿Desde cuál hiciste tu pedido?
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Solicitado
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Usuario
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93294</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">30/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93291</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Pendiente</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">23/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93289</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">16/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93287</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">11/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93285</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93283</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93281</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93279</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93277</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93273</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93278</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors">
+                                <td class="px-6 py-4 text-[#134395] font-medium">SPW 93271</td>
+                                <td class="px-6 py-4 text-[#134395]">Solicitud de pedido</td>
+                                <td class="px-6 py-4 text-[#134395]">Gestionada</td>
+                                <td class="px-6 py-4 text-[#134395]"></td>
+                                <td class="px-6 py-4 text-[#134395]">09/sep/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">ORTIZ, ANA BLASINA</td>
+                                <td class="px-6 py-4 text-right">
+                                    <button class="text-[#134395] hover:text-[#0f3275] transition-colors">
+                                        <svg class="w-5 h-5 inline-block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                        </svg>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>
+
+

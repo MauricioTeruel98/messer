@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Pedido - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-20">
+
+        <div class="bg-[#E1ECFE] mt-10 p-8 md:p-12 rounded-3xl bg-rectangle-shape">
+            
+            <!-- Header con botón regresar -->
+            <div class="mb-6">
+                <a href="pedidos.html"
+                    class="inline-flex items-center gap-2 text-[#134395] hover:text-[#0f3275] transition-colors text-base font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"></circle>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 12H9m0 0l3 3m-3-3l3-3"></path>
+                    </svg>
+                    <span>Regresar</span>
+                </a>
+            </div>
+
+            <!-- Título y descripción -->
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#134395] mb-4">Sigue tus pedidos</h1>
+                <p class="text-lg text-[#134395]">Rastrea en tiempo real el recorrido de tus pedidos y conoce las fechas de entrega de los que ya recibiste.</p>
+            </div>
+
+            <!-- Estados del pedido -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 mb-8">
+                <!-- Estado: Aprobado -->
+                <div class="bg-[#F0F0F0] rounded-xl p-4 text-center">
+                    <span class="text-[#6B7280] font-semibold text-sm">Aprobado</span>
+                </div>
+                
+                <!-- Estado: Solicitado -->
+                <div class="bg-[#D4E3F7] rounded-xl p-4 text-center">
+                    <span class="text-[#134395] font-semibold text-sm">Solicitado</span>
+                </div>
+                
+                <!-- Estado: Despachado -->
+                <div class="bg-[#ADD8FF] rounded-xl p-4 text-center">
+                    <span class="text-[#134395] font-semibold text-sm">Despachado</span>
+                </div>
+                
+                <!-- Estado: En camino -->
+                <div class="bg-[#ADD8FF] rounded-xl p-4 text-center">
+                    <span class="text-[#134395] font-semibold text-sm">En camino</span>
+                </div>
+                
+                <!-- Estado: Entregado -->
+                <div class="bg-[#D4F4DD] rounded-xl p-4 text-center">
+                    <span class="text-[#5EA436] font-semibold text-sm">Entregado</span>
+                </div>
+                
+                <!-- Estado: Fallido -->
+                <div class="bg-[#FFE5E5] rounded-xl p-4 text-center">
+                    <span class="text-[#E32A21] font-semibold text-sm">Fallido</span>
+                </div>
+            </div>
+
+            <!-- Grid de información -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+                <!-- Fecha y hora -->
+                <div class="bg-[#D4E3F7] rounded-2xl p-6">
+                    <h3 class="text-[#134395] font-semibold text-sm mb-2">Fecha y hora</h3>
+                    <p class="text-[#134395] text-lg font-bold">21/10/2025 | 10:45 a. m.</p>
+                </div>
+                
+                <!-- Ciudad -->
+                <div class="bg-[#ADD8FF] rounded-2xl p-6">
+                    <h3 class="text-[#134395] font-semibold text-sm mb-2">Ciudad</h3>
+                    <p class="text-[#134395] text-lg font-bold">BOGOTÁ D.C.</p>
+                </div>
+                
+                <!-- Dirección -->
+                <div class="bg-[#D4E3F7] rounded-2xl p-6">
+                    <h3 class="text-[#134395] font-semibold text-sm mb-2">Dirección</h3>
+                    <p class="text-[#134395] text-lg font-bold">CRA 109A 150B 79 Torre 3 Apto. 805 Conj. Residencial Imperial Reservado 2</p>
+                </div>
+                
+                <!-- Recibe -->
+                <div class="bg-[#ADD8FF] rounded-2xl p-6">
+                    <h3 class="text-[#134395] font-semibold text-sm mb-2">Recibe</h3>
+                    <p class="text-[#134395] text-lg font-bold">ANA SÁNCHEZ</p>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="p-4 bg-[#F3F7FF] flex items-center gap-3">
+                    
+                </div>
+                
+                <!-- Contenedor del mapa -->
+                <div id="map" class="w-full h-[500px]" style="background: linear-gradient(180deg, #E8F0FE 0%, #F8F9FA 100%);">
+                    <!-- Mapa simulado con marcador -->
+                    
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+    
+    <!-- Script para inicializar el mapa (opcional: usar Google Maps real) -->
+    <script>
+        // Si quisieras usar Google Maps real, descomentar y agregar API key:
+        /*
+        function initMap() {
+            const location = { lat: 4.7110, lng: -74.0721 }; // Bogotá
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+        window.onload = initMap;
+        */
+    </script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigue tus pedidos - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-20">
+
+        <div class="bg-[#E1ECFE] mt-10 p-8 md:p-12 rounded-3xl bg-rectangle-shape">
+            
+            <!-- Título y descripción -->
+            <div class="mb-8">
+                <h1 class="text-4xl md:text-5xl font-bold text-[#134395] mb-4">Sigue tus pedidos</h1>
+                <p class="text-lg text-[#134395]">Rastrea en tiempo real el recorrido de tus pedidos y conoce las fechas de entrega de los que ya recibiste.</p>
+            </div>
+
+            <!-- Mensaje de sin pedidos -->
+            <div class="bg-[#FFE5E5] border-2 border-[#FF0000] rounded-2xl p-6 mb-8">
+                <p class="text-[#E32A21] text-center font-semibold text-lg">No se encontraron pedidos entregados.</p>
+            </div>
+
+            <!-- Tabla de pedidos -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-sm">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-[#F3F7FF]">
+                            <tr>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Fecha entrega
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Código Pedido
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Domicilio
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-left">
+                                    <button class="flex items-center gap-2 text-[#134395] font-semibold text-sm">
+                                        Dirección
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </button>
+                                </th>
+                                <th class="px-6 py-4 text-right">
+                                    <span class="text-[#134395] font-semibold text-sm bg-[#ADD8FF] px-4 py-2 rounded-lg">Placa vehículo</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">20/02/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">AOQ42F</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">11/02/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">A3R31A</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">10/01/2025</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">AOQ42F</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">06/12/2024</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">AOQ42F</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">16/11/2024</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">AOQ42F</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr class="border-t border-gray-100 hover:bg-gray-50 transition-colors cursor-pointer" onclick="window.location.href='pedido-detalle.html'">
+                                <td class="px-6 py-4 text-[#134395] font-medium">19/10/2024</td>
+                                <td class="px-6 py-4 text-[#134395]">06-BOGOTA D.C.</td>
+                                <td class="px-6 py-4 text-[#134395]">BOGOTA D.C. - CR 706 # 79 - 21 - 8ª SUBA IMPERIAL RESERVADO</td>
+                                <td class="px-6 py-4 text-[#134395]">AOQ42F</td>
+                                <td class="px-6 py-4 text-[#134395] text-right">
+                                    <svg class="w-5 h-5 inline-block text-[#134395]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                    </svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>
+
+

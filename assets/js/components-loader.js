@@ -60,14 +60,22 @@ const COMPONENTS = {
                     </div>
                 </button>
             </li>
-            <li>
-                <button class="flex items-center gap-2 text-gray-700 hover:text-blue-900 transition-colors group">
+            <li class="relative dropdown-container">
+                <button class="dropdown-toggle flex items-center gap-2 text-gray-700 hover:text-blue-900 transition-colors group">
                     <span class="font-medium">Pedidos</span>
                     <div
                         class="w-4 h-4 rounded-full flex items-center justify-center group-hover:border-blue-900 transition-colors">
                         <img src="assets/img/icons/menu-item.svg" alt="Messer - Gases for Life" class="h-12">
                     </div>
                 </button>
+                <div class="dropdown-menu hidden absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg py-2 min-w-[220px] z-50">
+                    <a href="pedidos.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        <span class="font-medium">Sigue tus pedidos</span>
+                    </a>
+                    <a href="historial-pedidos.html" class="block px-4 py-3 text-gray-700 hover:bg-[#E9F1FF] hover:text-blue-900 transition-colors">
+                        <span class="font-medium">Historial de pedidos</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <button class="flex items-center gap-2 text-gray-700 hover:text-blue-900 transition-colors group">
@@ -111,11 +119,21 @@ const COMPONENTS = {
                     <img src="assets/img/icons/menu-item.svg" alt="Messer - Gases for Life" class="h-6">
                 </button>
             </li>
-            <li>
-                <button class="w-full flex items-center justify-between gap-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors p-3 rounded-lg group">
+            <li class="mobile-dropdown-container">
+                <button class="mobile-dropdown-toggle w-full flex items-center justify-between gap-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors p-3 rounded-lg group">
                     <span class="font-medium">Pedidos</span>
-                    <img src="assets/img/icons/menu-item.svg" alt="Messer - Gases for Life" class="h-6">
+                    <svg class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
                 </button>
+                <div class="mobile-dropdown-content hidden pl-6 mt-2 space-y-2">
+                    <a href="pedidos.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        <span class="font-medium">Sigue tus pedidos</span>
+                    </a>
+                    <a href="historial-pedidos.html" class="block text-gray-600 hover:text-blue-900 transition-colors py-2">
+                        <span class="font-medium">Historial de pedidos</span>
+                    </a>
+                </div>
             </li>
             <li>
                 <button class="w-full flex items-center justify-between gap-2 text-gray-700 hover:text-blue-900 hover:bg-gray-50 transition-colors p-3 rounded-lg group">
@@ -259,6 +277,68 @@ function initMobileMenu() {
     });
 }
 
+// Función para inicializar dropdowns en el menú desktop
+function initDesktopDropdowns() {
+    const dropdownContainers = document.querySelectorAll('.dropdown-container');
+    
+    dropdownContainers.forEach(container => {
+        const toggle = container.querySelector('.dropdown-toggle');
+        const menu = container.querySelector('.dropdown-menu');
+        
+        if (!toggle || !menu) return;
+        
+        // Mostrar dropdown al pasar el mouse
+        container.addEventListener('mouseenter', () => {
+            menu.classList.remove('hidden');
+        });
+        
+        // Ocultar dropdown al salir el mouse
+        container.addEventListener('mouseleave', () => {
+            menu.classList.add('hidden');
+        });
+        
+        // Toggle en click
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            menu.classList.toggle('hidden');
+        });
+    });
+    
+    // Cerrar dropdowns al hacer clic fuera
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.dropdown-container')) {
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                menu.classList.add('hidden');
+            });
+        }
+    });
+}
+
+// Función para inicializar dropdowns en el menú móvil
+function initMobileDropdowns() {
+    const mobileDropdownContainers = document.querySelectorAll('.mobile-dropdown-container');
+    
+    mobileDropdownContainers.forEach(container => {
+        const toggle = container.querySelector('.mobile-dropdown-toggle');
+        const content = container.querySelector('.mobile-dropdown-content');
+        const icon = toggle.querySelector('svg');
+        
+        if (!toggle || !content) return;
+        
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Toggle el contenido
+            content.classList.toggle('hidden');
+            
+            // Rotar el icono
+            if (icon) {
+                icon.classList.toggle('rotate-180');
+            }
+        });
+    });
+}
+
 // Función principal que carga todos los componentes
 async function loadAllComponents() {
     try {
@@ -271,6 +351,8 @@ async function loadAllComponents() {
         // Inicializar funcionalidad del menú móvil después de cargar el navbar
         if (navbarLoaded) {
             initMobileMenu();
+            initDesktopDropdowns();
+            initMobileDropdowns();
         }
         
         console.log('Componentes cargados exitosamente');

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de comprobantes - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-24">
+        <section class="bg-[#E1ECFE] rounded-3xl p-6 md:p-12 bg-rectangle-two">
+            <div class="flex flex-col gap-8">
+                <div class="space-y-4">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#134395]">Historial de comprobantes gestionados</h1>
+                    <p class="text-lg text-[#134395] max-w-3xl">Consulta el historial de cuotas moderadoras, copagos, renta de equipos y
+                        otros servicios que hayas gestionado.</p>
+                </div>
+
+                <a href="#" onclick="history.back(); return false;"
+                    class="inline-flex items-center gap-2 text-[#134395] font-semibold hover:text-blue-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Regresar
+                </a>
+
+                <div class="bg-white rounded-3xl shadow-lg p-6 md:p-10">
+                    <form class="space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Selecciona el rango de fechas*</h2>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="space-y-2">
+                                    <label for="fecha-desde" class="block text-[#134395] font-medium">Desde</label>
+                                    <input id="fecha-desde" type="text" placeholder="DD/MM/AAAA"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="fecha-hasta" class="block text-[#134395] font-medium">Hasta</label>
+                                    <input id="fecha-hasta" type="text" placeholder="DD/MM/AAAA"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="numero-comprobante" class="block text-[#134395] font-medium">Número de comprobante</label>
+                                    <input id="numero-comprobante" type="text" placeholder="Ingresa el número"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Elige el tipo de trámite*</h2>
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]" checked>
+                                    Cuotas moderadoras
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Copagos
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Renta de equipos
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Otros servicios
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                            <p class="text-[#134395]">Filtra el historial por fecha, número de comprobante o tipo de servicio.</p>
+                            <button type="button"
+                                class="bg-[#134395] text-white font-semibold px-6 md:px-10 py-3 rounded-full shadow hover:bg-blue-900 transition-colors">Buscar
+                                comprobantes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 px-6 py-6 border-b border-[#E0E8FA]">
+                        <div>
+                            <p class="text-[#134395] font-semibold text-lg">Mostrando 06 comprobantes</p>
+                            <p class="text-[#134395]/80 text-sm">Rango consultado: 01/01/2024 al 31/03/2024</p>
+                        </div>
+                        <div class="flex flex-wrap items-center gap-3">
+                            <button type="button"
+                                class="inline-flex items-center gap-2 bg-[#134395] text-white font-semibold px-5 py-2.5 rounded-full hover:bg-blue-900 transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 4h16v4H4zm4 8h8m-6 4h4"></path>
+                                </svg>
+                                Descargar comprobantes
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-[#F3F7FF] text-[#134395] text-sm">
+                                <tr>
+                                    <th class="px-6 py-4 text-left font-semibold">Fecha de gestión</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Número de comprobante</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Tipo de trámite</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Servicio</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Estado</th>
+                                    <th class="px-6 py-4 text-right font-semibold">Valor gestionado</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[#134395] text-sm md:text-base">
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">22/03/2024</td>
+                                    <td class="px-6 py-4">CM-984523</td>
+                                    <td class="px-6 py-4">Cuota moderadora</td>
+                                    <td class="px-6 py-4">Consulta de control neumología</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8FFF3] text-[#2F855A] text-sm font-semibold">Pagado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 48.600</td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">18/03/2024</td>
+                                    <td class="px-6 py-4">CP-774510</td>
+                                    <td class="px-6 py-4">Copago</td>
+                                    <td class="px-6 py-4">Hospitalización corta estancia</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#FFF7E6] text-[#C05621] text-sm font-semibold">Pendiente de descarga</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 120.000</td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">09/03/2024</td>
+                                    <td class="px-6 py-4">RE-672145</td>
+                                    <td class="px-6 py-4">Renta de equipo</td>
+                                    <td class="px-6 py-4">Concentrador portátil de oxígeno</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8FFF3] text-[#2F855A] text-sm font-semibold">Pagado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 340.000</td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">27/02/2024</td>
+                                    <td class="px-6 py-4">CM-652184</td>
+                                    <td class="px-6 py-4">Cuota moderadora</td>
+                                    <td class="px-6 py-4">Consulta telemedicina seguimiento</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#FCE8F3] text-[#9B2C6B] text-sm font-semibold">Rechazado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 38.600</td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">14/02/2024</td>
+                                    <td class="px-6 py-4">OS-521478</td>
+                                    <td class="px-6 py-4">Otros servicios</td>
+                                    <td class="px-6 py-4">Certificación de soporte terapéutico</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8FFF3] text-[#2F855A] text-sm font-semibold">Pagado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 25.000</td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4 font-semibold">04/02/2024</td>
+                                    <td class="px-6 py-4">CM-428715</td>
+                                    <td class="px-6 py-4">Cuota moderadora</td>
+                                    <td class="px-6 py-4">Consulta de primera vez neumología</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#FFF7E6] text-[#C05621] text-sm font-semibold">En proceso</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-right font-semibold">COP 48.600</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-6 py-5 border-t border-[#E0E8FA] bg-[#F3F7FF]">
+                        <p class="text-[#134395] font-medium">Página 01 de 02</p>
+                        <div class="flex items-center gap-2">
+                            <button class="px-4 py-2 rounded-full border border-[#B0C5F5] text-[#134395] font-semibold hover:bg-white transition-colors">Anterior</button>
+                            <div class="flex items-center gap-1">
+                                <button class="w-10 h-10 rounded-full bg-[#134395] text-white font-semibold">1</button>
+                                <button class="w-10 h-10 rounded-full text-[#134395] font-semibold hover:bg-white border border-transparent">2</button>
+                                <button class="w-10 h-10 rounded-full text-[#134395] font-semibold hover:bg-white border border-transparent">3</button>
+                            </div>
+                            <button class="px-4 py-2 rounded-full border border-[#B0C5F5] text-[#134395] font-semibold hover:bg-white transition-colors">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

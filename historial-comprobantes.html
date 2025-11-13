@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de comprobantes - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-24">
+        <section class="bg-[#E1ECFE] rounded-3xl p-6 md:p-12 bg-rectangle-two">
+            <div class="flex flex-col gap-8">
+                <div class="space-y-4">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#134395]">Historial de comprobantes gestionados</h1>
+                    <p class="text-lg text-[#134395] max-w-3xl">Consulta el historial de cuotas moderadoras, copagos, renta de equipos y
+                        otros servicios que hayas gestionado.</p>
+                </div>
+
+                <a href="#" onclick="history.back(); return false;"
+                    class="inline-flex items-center gap-2 text-[#134395] font-semibold hover:text-blue-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Regresar
+                </a>
+
+                <div class="bg-white rounded-3xl shadow-lg p-6 md:p-10">
+                    <form class="space-y-8">
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Selecciona el rango de fechas*</h2>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <div class="space-y-2">
+                                    <label for="fecha-desde" class="block text-[#134395] font-medium">Desde</label>
+                                    <input id="fecha-desde" type="text" placeholder="DD/MM/AAAA"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="fecha-hasta" class="block text-[#134395] font-medium">Hasta</label>
+                                    <input id="fecha-hasta" type="text" placeholder="DD/MM/AAAA"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="numero-comprobante" class="block text-[#134395] font-medium">Número de comprobante</label>
+                                    <input id="numero-comprobante" type="text" placeholder="Ingresa el número"
+                                        class="w-full border border-[#B0C5F5] rounded-full px-5 py-3 focus:outline-none focus:ring-2 focus:ring-[#134395]">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-4">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Elige el tipo de trámite*</h2>
+                            <div class="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]" checked>
+                                    Cuotas moderadoras
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Copagos
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Renta de equipos
+                                </label>
+                                <label class="inline-flex items-center gap-3 text-[#134395] font-medium">
+                                    <input type="radio" name="tipo-tramite" class="w-5 h-5 text-[#134395]">
+                                    Otros servicios
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                            <p class="text-[#134395]">Filtra el historial por fecha, número de comprobante o tipo de servicio.</p>
+                            <button type="button"
+                                class="bg-[#134395] text-white font-semibold px-6 md:px-10 py-3 rounded-full shadow hover:bg-blue-900 transition-colors">Buscar
+                                comprobantes</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="bg-[#FFE5E5] border-2 border-[#FF7A7A] text-center text-[#E32A21] font-semibold rounded-3xl px-6 py-8">
+                    Aún no has realizado búsquedas. Selecciona un rango de fechas para consultar tu historial.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firma y pagos pendientes - Messer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="bg-[#FCFCFC]">
+    <!-- Navbar Component -->
+    <div id="navbar-container"></div>
+
+    <main class="container mx-auto px-4 md:px-6 py-8 md:py-16 mt-24">
+        <section class="bg-[#E1ECFE] rounded-3xl p-6 md:p-12 bg-rectangle-shape">
+            <div class="flex flex-col gap-8">
+                <div class="space-y-4">
+                    <h1 class="text-3xl md:text-5xl font-bold text-[#134395]">Firma y realiza tus pagos pendientes</h1>
+                    <p class="text-lg text-[#134395] max-w-3xl">Aquí puedes firmar digitalmente tus comprobantes y completar los copagos
+                        o cuotas moderadoras de tus servicios.</p>
+                </div>
+
+                <a href="#" onclick="history.back(); return false;"
+                    class="inline-flex items-center gap-2 text-[#134395] font-semibold hover:text-blue-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                    Regresar
+                </a>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 px-6 py-6 border-b border-[#E0E8FA]">
+                        <div class="space-y-2">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Servicios pendientes de pago</h2>
+                            <p class="text-[#134395]/80">Actualmente no tienes copagos o cuotas moderadoras pendientes por pagar.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D7E7FF] text-[#134395] font-semibold">
+                                Total a pagar: <span class="text-[#134395]">COP 0</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="px-6 py-10 bg-[#FFE5E5] text-center border-t-4 border-[#FF7A7A]">
+                        <p class="text-[#E32A21] font-semibold text-lg">No tienes servicios o comprobantes por pagar.</p>
+                        <p class="text-[#E32A21] mt-2">Cuando generes un nuevo servicio o copago pendiente, lo verás reflejado aquí.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+                    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 px-6 py-6 border-b border-[#E0E8FA]">
+                        <div class="space-y-2">
+                            <h2 class="text-2xl font-semibold text-[#134395]">Servicios pendientes de firma</h2>
+                            <p class="text-[#134395]/80">Revisa los comprobantes que requieren tu firma para completar el proceso.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#D7E7FF] text-[#134395] font-semibold">
+                                Documentos por firmar: <span class="text-[#134395]">02</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead class="bg-[#F3F7FF] text-[#134395] text-sm">
+                                <tr>
+                                    <th class="px-6 py-4">
+                                        <input type="checkbox" class="w-5 h-5 text-[#134395]">
+                                    </th>
+                                    <th class="px-6 py-4 text-left font-semibold">Nombre del servicio</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Servicio</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Número de comprobante</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Fecha</th>
+                                    <th class="px-6 py-4 text-left font-semibold">Estado</th>
+                                    <th class="px-6 py-4 text-center font-semibold">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-[#134395] text-sm md:text-base">
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4">
+                                        <input type="checkbox" class="w-5 h-5 text-[#134395]">
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">Recolección de cilindros vacíos</td>
+                                    <td class="px-6 py-4">Logística domiciliaria</td>
+                                    <td class="px-6 py-4">RF-487520</td>
+                                    <td class="px-6 py-4">12/03/2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#FFF7E6] text-[#C05621] text-sm font-semibold">Pendiente</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <button class="inline-flex items-center gap-2 text-[#134395] font-semibold hover:text-blue-900 transition-colors">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.862 4.487z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 7.125L16.875 4.5"></path>
+                                            </svg>
+                                            Firmar
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="border-t border-[#EEF2FD] hover:bg-[#F9FBFF] transition-colors">
+                                    <td class="px-6 py-4">
+                                        <input type="checkbox" class="w-5 h-5 text-[#134395]">
+                                    </td>
+                                    <td class="px-6 py-4 font-semibold">Instalación de concentrador de oxígeno</td>
+                                    <td class="px-6 py-4">Visita técnica</td>
+                                    <td class="px-6 py-4">RF-487312</td>
+                                    <td class="px-6 py-4">08/03/2024</td>
+                                    <td class="px-6 py-4">
+                                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-[#E8FFF3] text-[#2F855A] text-sm font-semibold">Firmado</span>
+                                    </td>
+                                    <td class="px-6 py-4 text-center">
+                                        <button class="inline-flex items-center gap-2 text-[#134395] font-semibold hover:text-blue-900 transition-colors">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.862 4.487z"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 7.125L16.875 4.5"></path>
+                                            </svg>
+                                            Firmar nuevamente
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 px-6 py-5 border-t border-[#E0E8FA] bg-[#F3F7FF]">
+                        <label class="inline-flex items-center gap-3 text-[#134395] font-semibold">
+                            <input type="checkbox" class="w-5 h-5 text-[#134395]">
+                            Seleccionar todos
+                        </label>
+                        <div class="flex flex-col md:flex-row md:items-center md:gap-4 gap-3">
+                            <span class="text-[#134395] font-semibold">Documentos seleccionados: 02</span>
+                            <button class="bg-[#134395] text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-900 transition-colors">Firmar
+                                seleccionados</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar componentes -->
+    <script src="assets/js/components-loader.js"></script>
+</body>
+
+</html>
